@@ -36,13 +36,13 @@ $recursos = $gestor->listarRecursos();
 
 
 <table>
-    <tr>
+<tr>
         <th>ID</th>
         <th>Título</th>
         <th>Estado</th>
         <th>Detalles Préstamo</th>
     </tr>
-    <?php foreach ($recursos as $recurso): ?>
+        <?php foreach ($recursos as $recurso): ?>
     <tr>
         <td><?php echo $recurso->id; ?></td>
         <td><?php echo $recurso->titulo; ?></td>
