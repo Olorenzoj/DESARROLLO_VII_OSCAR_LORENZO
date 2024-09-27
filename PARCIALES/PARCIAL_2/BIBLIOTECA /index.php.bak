@@ -1,5 +1,5 @@
 <?php
-require_once 'CLASSES/GestorBiblioteca.php';
+require_once 'classes/GestorBiblioteca.php';
 
 $gestor = new GestorBiblioteca();
 $gestor->cargarRecursosDesdeJSON('biblioteca.json');
@@ -22,7 +22,7 @@ if (isset($_GET['action'])) {
             file_put_contents('biblioteca.json', json_encode($gestor->listarRecursos()));
             break;
         case 'actualizar':
-            //vacio
+            // Handle updating logic
             break;
         case 'cambiar_estado':
             $gestor->actualizarEstadoRecurso($_GET['id'], $_GET['estado']);
@@ -34,7 +34,7 @@ if (isset($_GET['action'])) {
 $recursos = $gestor->listarRecursos();
 ?>
 
-
+<!-- HTML to display resources -->
 <table>
     <tr>
         <th>ID</th>
