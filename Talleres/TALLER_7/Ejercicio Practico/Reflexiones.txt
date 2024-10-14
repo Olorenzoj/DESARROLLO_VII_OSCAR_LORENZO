@@ -1,0 +1,4 @@
+¿Qué desafíos encontraste al implementar este sistema? : muchos, tuve que volver a leer todo en el file e incluso buscar info en internet
+¿Cómo aseguraste la seguridad de las sesiones y cookies en tu implementación?: utilizando las debidas configuraciones en el config_sesion
+¿Qué mejoras o características adicionales podrías añadir a este sistema en el futuro?: se le podria añadir una mejor ui y mejor manejo de los productos, tambien un login para el usuario y que sus productos se guarden en su perfil via una base de datos
+¿Cómo se compara el uso de sesiones con otras formas de mantener el estado en aplicaciones web?: luego de hacer una debidad investigacion vi que Las sesiones son más seguras que las cookies y localStorage, ya que almacenan datos en el servidor. Son ideales para manejar información sensible.
