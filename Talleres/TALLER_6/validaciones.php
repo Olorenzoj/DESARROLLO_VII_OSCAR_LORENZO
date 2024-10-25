@@ -47,4 +47,13 @@ function validarFotoPerfil($archivo) {
 
     return true;
 }
-?>
+
+function validarFechaNacimiento($fecha) {
+    $fechaObj = DateTime::createFromFormat('Y-m-d', $fecha);
+    if (!$fechaObj) {
+        return false; // Formato inválido
+    }
+    $hoy = new DateTime();
+    $edad = $hoy->diff($fechaObj)->y;
+    return $edad >= 18; // Mayor de edad
+}

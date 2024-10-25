@@ -1,31 +1,59 @@
 <?php
 function sanitizarNombre($nombre) {
-    return filter_var(trim($nombre), FILTER_SANITIZE_STRING);
+    $nombre = trim($nombre); 
+    return htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8'); 
 }
 
 function sanitizarEmail($email) {
-    return filter_var(trim($email), FILTER_SANITIZE_EMAIL);
+    $email = trim($email);
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); 
+    } else {
+        return false; 
+    }
 }
 
 function sanitizarEdad($edad) {
-    return filter_var($edad, FILTER_SANITIZE_NUMBER_INT);
+    $edad = filter_var($edad, FILTER_SANITIZE_NUMBER_INT);
+    if ($edad !== false && $edad >= 0 && $edad <= 120) { 
+        return $edad;
+    } else {
+        return false; 
+    }
 }
 
-function sanitizarSitioWeb($sitioWeb) {
-    return filter_var(trim($sitioWeb), FILTER_SANITIZE_URL);
+function sanitizarSitioWeb($sitioWeb) { 
+    $sitioWeb = trim($sitioWeb);
+    if (filter_var($sitioWeb, FILTER_VALIDATE_URL)) {
+        return $sitioWeb;
+    } else {
+        return false; 
+    }
 }
 
 function sanitizarGenero($genero) {
-    return filter_var(trim($genero), FILTER_SANITIZE_STRING);
+  
+    $genero = trim($genero);
+    $allowedGenders = ['male', 'female', 'other']; 
+    if (in_array($genero, $allowedGenders)) {
+        return $genero;
+    } else {
+        return false; 
+    }
 }
 
 function sanitizarIntereses($intereses) {
     return array_map(function($interes) {
-        return filter_var(trim($interes), FILTER_SANITIZE_STRING);
+        $interes = trim($interes);
+        return htmlspecialchars($interes, ENT_QUOTES, 'UTF-8'); 
     }, $intereses);
 }
 
 function sanitizarComentarios($comentarios) {
-    return htmlspecialchars(trim($comentarios), ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars(trim($comentarios), ENT_QUOTES, 'UTF-8'); 
 }
-?>
+function sanitizarFechaNacimiento($fecha) {
+    $fecha = trim($fecha);
+    $fechaObj = DateTime::createFromFormat('Y-m-d', $fecha);
+    return $fechaObj ? $fechaObj->format('Y-m-d') : false;
+}
