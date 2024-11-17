@@ -102,7 +102,7 @@ function porcentajeVentasPorProducto($conn) {
 // Ejecutar las consultas
 productosNuncaVendidos($conn);
 categoriasInventario($conn);
-clientesCategoriaEspecifica($conn, 1); // Cambia 1 por el ID de la categoría deseada
+clientesCategoriaEspecifica($conn, 1);
 porcentajeVentasPorProducto($conn);
 
 // Cerrar conexión
