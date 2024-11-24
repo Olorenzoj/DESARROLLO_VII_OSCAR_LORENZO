@@ -19,7 +19,7 @@ $libros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Mi Biblioteca</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../../DSVII_PROYECTO_FINAL/public/css/styles.css">
 </head>
 <body>
 <header>

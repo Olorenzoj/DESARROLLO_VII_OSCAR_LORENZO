@@ -26,7 +26,7 @@ if (isset($_POST['bookId'])) {
 <html>
 <head>
     <title>Detalles del Libro</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../../DSVII_PROYECTO_FINAL/public/css/styles.css">
 </head>
 <body>
 <header>

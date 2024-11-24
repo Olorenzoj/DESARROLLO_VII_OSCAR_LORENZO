@@ -15,7 +15,7 @@ if (isset($_SESSION['user'])) {
 <html>
 <head>
     <title>Biblioteca Personal</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../../DSVII_PROYECTO_FINAL/public/css/styles.css">
 </head>
 <body>
 <header>
